@@ -3,7 +3,11 @@
 
 language: c
 
-sudo: false
+sudo:
+    required
+
+services:
+    docker
 
 compiler:
   - gcc
