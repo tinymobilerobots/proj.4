@@ -3,9 +3,6 @@
 
 language: c
 
-sudo:
-    required
-
 services:
     docker
 
@@ -109,7 +106,7 @@ after_success:
   - coveralls --extension .c
   - echo "$TRAVIS_SECURE_ENV_VARS"
   - sh -c "./travis/build_docs.sh"
-  - sh -c 'if test "$TRAVIS_SECURE_ENV_VARS" = "true" -a "$TRAVIS_BRANCH" = "master"; then echo "publish website"; ./travis/add_deploy_key.sh; ./travis/deploy_website.sh docs/build /tmp; fi'
+  - sh -c 'if test "$TRAVIS_SECURE_ENV_VARS" = "true" -a "$TRAVIS_BRANCH" = "travis-docs"; then echo "publish website"; ./travis/add_deploy_key.sh; ./travis/deploy_website.sh docs/build /tmp; fi'
 
 notifications:
   #email:
