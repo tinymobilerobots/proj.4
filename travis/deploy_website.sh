@@ -4,7 +4,7 @@ builddir=$1
 destdir=$2
 
 
-git clone git@github.com:OSGeo/proj4.git $destdir/proj4docs
+git clone git@github.com:OSGeo/proj.4.git $destdir/proj4docs
 cd $destdir/proj4docs
 git checkout gh-pages
 
