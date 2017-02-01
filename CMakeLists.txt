@@ -12,8 +12,8 @@
 cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
 
 # proj4 is an ANSI C project
-project(PROJ4 C)
-set(PROJECT_INTERN_NAME PROJ)
+project(proj4 C)
+set(PROJECT_INTERN_NAME proj4)
 
 #################################################################################
 # PROJ4 CMake modules
@@ -117,4 +117,13 @@ add_subdirectory(nad)
 add_subdirectory(src)
 add_subdirectory(man)
 add_subdirectory(cmake)
+
+catkin_package(
+ INCLUDE_DIRS src
+ LIBRARIES proj4
+) 
+install(DIRECTORY src/
+   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+   FILES_MATCHING PATTERN "*.h"
+)
 
