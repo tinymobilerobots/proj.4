@@ -19,8 +19,8 @@ set(PROJECT_INTERN_NAME proj4)
 # PROJ4 CMake modules
 #################################################################################
 # Path to additional CMake modules
-set(CMAKE_MODULE_PATH ${PROJ4_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
-set(CMAKE_MODULE_PATH ${PROJ4_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${proj4_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${proj4_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 
 include(Proj4Utilities)
 
@@ -110,7 +110,7 @@ set(INCLUDEDIR "${DEFAULT_INCLUDEDIR}" CACHE PATH "The directory to install incl
 #################################################################################
 # Build configured components
 #################################################################################
-include_directories(${PROJ4_SOURCE_DIR}/src)
+include_directories(${proj4_SOURCE_DIR}/src)
 
 message(STATUS "")
 add_subdirectory(nad)
